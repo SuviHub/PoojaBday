@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pooja Turns 20! 🎉</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #ffc0cb, #ffe6f0);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 30px;
+      color: #b30059;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    h1, h2 {
+      color: #b30059;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 10px auto;
+      max-width: 600px;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .memory, .missing {
+      background: #fff0f5;
+      border-radius: 20px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    .confetti {
+      font-size: 2em;
+      animation: pop 1s ease-in-out infinite alternate;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 1em;
+      color: #444;
+      animation: fadeIn 5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    .floating-text {
+      position: fixed;
+      font-size: 1.5em;
+      color: #b30059;
+      font-weight: bold;
+      opacity: 0.6;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    @keyframes float1 {
+      0%   { transform: translateX(-150%); top: 20%; }
+      100% { transform: translateX(120vw); top: 20%; }
+    }
+
+    @keyframes float2 {
+      0%   { transform: translateX(-150%); top: 30%; }
+      100% { transform: translateX(120vw); top: 30%; }
+    }
+
+    @keyframes float3 {
+      0%   { transform: translateX(-150%); top: 25%; }
+      100% { transform: translateX(120vw); top: 25%; }
+    }
+
+    @keyframes float4 {
+      0%   { transform: translateX(-150%); top: 35%; }
+      100% { transform: translateX(120vw); top: 35%; }
+    }
+
+    @keyframes float5 {
+      0%   { transform: translateX(-150%); top: 15%; }
+      100% { transform: translateX(120vw); top: 15%; }
+    }
+
+    /* Tap overlay */
+    #tapOverlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(255, 192, 203, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2em;
+      color: #b30059;
+      z-index: 999;
+      text-align: center;
+    }
+
+    #tapOverlay:hover {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Tap to Start Overlay -->
+  <div id="tapOverlay">👆 Tap Tap 🎶</div>
+
+  <div class="confetti">🎉🎂💖</div>
+  <h1>Happy 20th Birthday, Pooja! 💗</h1>
+  <p>Welcome to the legendary 20s club — where the drama stays high and the energy stays low. 😂</p>
+
+  <h3 style="color:#b30059; margin-top: 10px;">
+  🎊 Celebrating 10 Years of Friendship 🎊<br>
+  From silly fights to serial stories — what a ride!
+  </h3>
+
+
+  <div class="memory">
+    <h2>📺 Memory Time</h2>
+    <p>“Talking about serial stories every day like we were on a review show,  
+    and fooling Juhi when she asked questions about each other... 😂  
+    ICONIC.”</p>
+  </div>
+
+  <div class="missing">
+    <h2>🚨 Missing Person Alert</h2>
+    <p>Last seen: Pooja.  
+    Status: REFUSES to come out.  
+    If found outside her house, please take a selfie — it’s rare footage.  
+    Birthday or not, this girl’s harder to spot than Bigfoot! 🏠🔒😂</p>
+  </div>
+
+  <p>So here’s to more laughs, more serial gossip, and more hilarious screenshots.  
+  Never change. But maybe come out sometime? 👀</p>
+
+  <p>— Suvidha 💌</p>
+
+  <div class="footer">
+    Stay healthy, stay happy, and all the very best for everything ahead! 💖✨
+  </div>
+
+  <!-- Floating "Pooja, come out!" messages -->
+  <div class="floating-text" style="left: 0%; animation: float1 18s linear infinite;">Pooja, come out!</div>
+  <div class="floating-text" style="left: 10%; animation: float2 20s linear infinite 3s;">Pooja, come out!</div>
+  <div class="floating-text" style="left: 20%; animation: float3 22s linear infinite 6s;">Pooja, come out!</div>
+  <div class="floating-text" style="left: 30%; animation: float4 24s linear infinite 9s;">Pooja, come out!</div>
+  <div class="floating-text" style="left: 40%; animation: float5 26s linear infinite 12s;">Pooja, come out!</div>
+
+  <!-- Audio -->
+  <audio id="bgAudio" src="Channa Mereya - Ae Dil Hai Mushkil 128 Kbps.mp3" preload="auto"></audio>
+
+  <script>
+    const audio = document.getElementById("bgAudio");
+    const overlay = document.getElementById("tapOverlay");
+
+    overlay.addEventListener("click", () => {
+      overlay.style.display = "none";
+      audio.currentTime = 18;
+      audio.play();
+
+      audio.addEventListener("timeupdate", () => {
+        if (audio.currentTime >= 90) {
+          audio.currentTime = 18;
+          audio.play();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
